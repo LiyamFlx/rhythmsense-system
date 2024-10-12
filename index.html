@@ -4,149 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RhythmSense System Architecture</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .system-component {
-            border: 2px solid #007BFF;
-            border-radius: 10px;
-            background-color: #fff;
-            padding: 20px;
-            margin: 10px;
-            width: 100%;
-        }
-        .title {
-            color: #007BFF;
-            font-size: 1.5em;
-        }
-        .description {
-            color: #555;
-            margin-top: 10px;
-        }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .box {
-            border: 1px solid #007BFF;
-            border-radius: 8px;
-            background-color: #fff;
-            margin: 10px;
-            padding: 15px;
-            flex-basis: 30%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+
+    <!-- Link to Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-<div class="container">
-    <h1>RhythmSense System Architecture</h1>
-
-    <!-- Front-End Section -->
-    <div class="system-component">
-        <div class="title">Front-End (React/Next.js)</div>
-        <div class="description">
-            The client-side interface for DJs and event organizers to interact with. This includes:
-            <ul>
-                <li>Real-Time Dashboard: Displays live metrics like crowd movement and energy levels.</li>
-                <li>Responsive Design: Optimized for desktop, tablet, and mobile devices.</li>
-                <li>Event Setup Wizard: Guides users through configuring event playlists, venues, etc.</li>
-            </ul>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>RhythmSense System Architecture</h1>
+            <p>An innovative event optimization platform for DJs and event organizers.</p>
         </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <section class="system-overview">
+            <h2>System Architecture Overview</h2>
+            <p>
+                RhythmSense is a real-time data-driven platform that optimizes audience engagement during events using advanced motion analysis and audio insights. Here's a breakdown of its system components.
+            </p>
+        </section>
+
+        <!-- System Components Section -->
+        <section class="system-components">
+            <h2>Key Components</h2>
+            <div class="grid">
+                <div class="box">
+                    <i class="fas fa-desktop icon"></i>
+                    <h3>Front-End (React/Next.js)</h3>
+                    <p>The user-facing interface that provides real-time crowd data and track recommendations. Designed to be fully responsive and intuitive.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-server icon"></i>
+                    <h3>Back-End (Node.js/Express)</h3>
+                    <p>Manages all the event data, user authentication, and integration with external APIs, ensuring seamless performance and scalability.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-brain icon"></i>
+                    <h3>AI/ML Algorithms</h3>
+                    <p>Advanced algorithms that provide real-time audience engagement insights and generate music recommendations for DJs based on crowd behavior.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-database icon"></i>
+                    <h3>Database (PostgreSQL, Redis)</h3>
+                    <p>Stores event data, user preferences, and real-time analytics for quick access and optimized performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="call-to-action">
+            <h2>Want to Learn More?</h2>
+            <p>Discover how RhythmSense can transform your events and keep your audience engaged like never before.</p>
+            <a href="#" class="cta-button">Get Started Now</a>
+        </section>
     </div>
 
-    <!-- Back-End Section -->
-    <div class="system-component">
-        <div class="title">Back-End (Node.js/Express)</div>
-        <div class="description">
-            The server-side system that manages data processing and handles user requests. This includes:
-            <ul>
-                <li>API Gateway: Connects the front-end to various back-end services.</li>
-                <li>User Management: Manages users, roles (DJ, organizer), and event data.</li>
-                <li>Integration Services: Links DJ software, sound systems, and motion sensors for real-time data.</li>
-            </ul>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 RhythmSense. All rights reserved.</p>
         </div>
-    </div>
-
-    <!-- Real-Time Data Processing -->
-    <div class="system-component">
-        <div class="title">Real-Time Data Processing (Kafka, Redis)</div>
-        <div class="description">
-            A distributed real-time processing engine that collects, analyzes, and serves live data to the front-end.
-            <ul>
-                <li>Event Data Stream: Processes live event data (crowd movement, audio levels) with Kafka.</li>
-                <li>AI/ML Algorithms: Analyzes crowd energy, sentiment, and recommends track changes.</li>
-                <li>Real-Time Analysis: Provides heatmaps and engagement metrics to keep the audience engaged.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Database -->
-    <div class="system-component">
-        <div class="title">Database (PostgreSQL, Redis)</div>
-        <div class="description">
-            The system stores all event data, user profiles, and analytics.
-            <ul>
-                <li>PostgreSQL: Stores user profiles, event history, and preferences.</li>
-                <li>Redis: Handles real-time caching of rapidly changing metrics and event data.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- APIs & Integrations -->
-    <div class="system-component">
-        <div class="title">APIs & Integrations</div>
-        <div class="description">
-            Integrations with DJ software and motion sensors that provide data to the platform.
-            <ul>
-                <li>DJ Software Integration: Interfaces with Serato, Traktor to get real-time track info.</li>
-                <li>Motion Sensor Integration: Connects with hardware to capture crowd movements in real time.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Security & Authentication -->
-    <div class="system-component">
-        <div class="title">Security & Authentication (OAuth, JWT)</div>
-        <div class="description">
-            Securing the system and authenticating users with:
-            <ul>
-                <li>OAuth for third-party logins (Google, Facebook).</li>
-                <li>JWT for token-based authentication, ensuring secure sessions.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Deployment & Monitoring -->
-    <div class="system-component">
-        <div class="title">Deployment & Monitoring</div>
-        <div class="description">
-            Ensuring scalability, performance, and reliability with:
-            <ul>
-                <li>Docker: Containerize the system for consistent deployment.</li>
-                <li>Cloud Hosting: Use AWS or Google Cloud for deployment and scaling.</li>
-                <li>Monitoring: Use tools like Datadog for real-time error and performance monitoring.</li>
-            </ul>
-        </div>
-    </div>
-</div>
+    </footer>
 
 </body>
 </html>
