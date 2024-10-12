@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RhythmSense System Architecture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .system-component {
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            width: 100%;
+        }
+        .title {
+            color: #007BFF;
+            font-size: 1.5em;
+        }
+        .description {
+            color: #555;
+            margin-top: 10px;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .box {
+            border: 1px solid #007BFF;
+            border-radius: 8px;
+            background-color: #fff;
+            margin: 10px;
+            padding: 15px;
+            flex-basis: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>RhythmSense System Architecture</h1>
+
+    <!-- Front-End Section -->
+    <div class="system-component">
+        <div class="title">Front-End (React/Next.js)</div>
+        <div class="description">
+            The client-side interface for DJs and event organizers to interact with. This includes:
+            <ul>
+                <li>Real-Time Dashboard: Displays live metrics like crowd movement and energy levels.</li>
+                <li>Responsive Design: Optimized for desktop, tablet, and mobile devices.</li>
+                <li>Event Setup Wizard: Guides users through configuring event playlists, venues, etc.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Back-End Section -->
+    <div class="system-component">
+        <div class="title">Back-End (Node.js/Express)</div>
+        <div class="description">
+            The server-side system that manages data processing and handles user requests. This includes:
+            <ul>
+                <li>API Gateway: Connects the front-end to various back-end services.</li>
+                <li>User Management: Manages users, roles (DJ, organizer), and event data.</li>
+                <li>Integration Services: Links DJ software, sound systems, and motion sensors for real-time data.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Real-Time Data Processing -->
+    <div class="system-component">
+        <div class="title">Real-Time Data Processing (Kafka, Redis)</div>
+        <div class="description">
+            A distributed real-time processing engine that collects, analyzes, and serves live data to the front-end.
+            <ul>
+                <li>Event Data Stream: Processes live event data (crowd movement, audio levels) with Kafka.</li>
+                <li>AI/ML Algorithms: Analyzes crowd energy, sentiment, and recommends track changes.</li>
+                <li>Real-Time Analysis: Provides heatmaps and engagement metrics to keep the audience engaged.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Database -->
+    <div class="system-component">
+        <div class="title">Database (PostgreSQL, Redis)</div>
+        <div class="description">
+            The system stores all event data, user profiles, and analytics.
+            <ul>
+                <li>PostgreSQL: Stores user profiles, event history, and preferences.</li>
+                <li>Redis: Handles real-time caching of rapidly changing metrics and event data.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- APIs & Integrations -->
+    <div class="system-component">
+        <div class="title">APIs & Integrations</div>
+        <div class="description">
+            Integrations with DJ software and motion sensors that provide data to the platform.
+            <ul>
+                <li>DJ Software Integration: Interfaces with Serato, Traktor to get real-time track info.</li>
+                <li>Motion Sensor Integration: Connects with hardware to capture crowd movements in real time.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Security & Authentication -->
+    <div class="system-component">
+        <div class="title">Security & Authentication (OAuth, JWT)</div>
+        <div class="description">
+            Securing the system and authenticating users with:
+            <ul>
+                <li>OAuth for third-party logins (Google, Facebook).</li>
+                <li>JWT for token-based authentication, ensuring secure sessions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Deployment & Monitoring -->
+    <div class="system-component">
+        <div class="title">Deployment & Monitoring</div>
+        <div class="description">
+            Ensuring scalability, performance, and reliability with:
+            <ul>
+                <li>Docker: Containerize the system for consistent deployment.</li>
+                <li>Cloud Hosting: Use AWS or Google Cloud for deployment and scaling.</li>
+                <li>Monitoring: Use tools like Datadog for real-time error and performance monitoring.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
