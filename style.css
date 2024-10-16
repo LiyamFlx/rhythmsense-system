@@ -10,6 +10,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #f9f9f9;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Container for centralizing content */
@@ -23,20 +24,23 @@ body {
 .header {
     background-color: #007BFF;
     color: white;
-    padding: 40px 0;
+    padding: 60px 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
 }
 
 .header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .header p {
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 0;
+    opacity: 0.9;
 }
 
 /* System Overview Section */
@@ -46,91 +50,101 @@ body {
 }
 
 .system-overview h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: 500;
+    color: #007BFF;
 }
 
 .system-overview p {
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.8;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 900px;
+    color: #555;
 }
 
 /* Key Components Section */
 .system-components h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
     font-weight: 500;
+    color: #007BFF;
 }
 
 .grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .box {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 45%;
-    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex-basis: 48%;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .box:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .icon {
-    font-size: 3rem;
+    font-size: 4rem;
     color: #007BFF;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .box h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 .box p {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #666;
 }
 
 /* Call to Action Section */
 .call-to-action {
     background-color: #007BFF;
     color: white;
-    padding: 40px 20px;
+    padding: 50px 20px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
 }
 
 .call-to-action h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .call-to-action p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 30px;
+    opacity: 0.95;
 }
 
 .cta-button {
     background-color: white;
     color: #007BFF;
-    padding: 15px 30px;
+    padding: 15px 40px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-decoration: none;
     font-weight: 500;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
@@ -144,6 +158,7 @@ footer {
     color: white;
     padding: 20px 0;
     text-align: center;
+    border-radius: 10px 10px 0 0;
 }
 
 footer p {
@@ -152,12 +167,70 @@ footer p {
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .grid {
         flex-direction: column;
     }
 
     .box {
-        width: 100%;
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .call-to-action h2 {
+        font-size: 2rem;
+    }
+
+    .call-to-action p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 40px 10px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .system-overview h2 {
+        font-size: 1.8rem;
+    }
+
+    .system-overview p {
+        font-size: 1rem;
+    }
+
+    .call-to-action h2 {
+        font-size: 1.8rem;
+    }
+
+    .call-to-action p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
     }
 }
