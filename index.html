@@ -3,57 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RhythmSense System Architecture</title>
+    <title>RhythmSense Pricing Plans</title>
 
-    <!-- Link to Google Fonts for modern typography -->
+    <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Styles -->
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
+        /* General reset and font setup */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fc;
             color: #333;
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 50px auto;
             padding: 20px;
         }
 
-        header, footer {
-            background-color: #4CAF50;
-            color: white;
+        /* Header styling */
+        header {
             text-align: center;
-            padding: 20px;
-        }
-
-        h1, h2 {
-            margin-bottom: 20px;
-        }
-
-        p {
-            margin-bottom: 20px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
             background-color: #4CAF50;
+            padding: 40px 20px;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 10px;
+            margin-bottom: 40px;
         }
 
-        .cta-button:hover {
-            background-color: #45a049;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        /* Tab Styles */
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Tabs styling */
         .tabs {
             display: flex;
             justify-content: center;
@@ -69,82 +64,119 @@
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
         .tab-button:hover {
-            background-color: #45a049;
-        }
-
-        .tab-button.active {
             background-color: #388E3C;
         }
 
-        /* Content Styles */
-        .tab-content {
-            display: none;
+        .tab-button.active {
+            background-color: #2E7D32;
         }
 
-        .tab-content.active {
-            display: block;
+        /* Pricing Plans Section */
+        .plans-wrapper {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .plan-card {
             background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            max-width: 280px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .plan-title {
-            font-size: 1.5em;
+            font-size: 1.5rem;
             margin-bottom: 10px;
+            font-weight: 500;
             color: #4CAF50;
         }
 
         .plan-price {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            margin: 15px 0;
+            color: #333;
         }
 
         .plan-description {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             color: #666;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
+        .recommended-badge {
+            background-color: #673AB7;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: inline-block;
         }
 
-        ul li {
-            margin-bottom: 8px;
+        .plan-features {
+            list-style: none;
+            margin-bottom: 20px;
+            padding: 0;
+            text-align: left;
+        }
+
+        .plan-features li {
+            margin-bottom: 10px;
             position: relative;
         }
 
-        ul li::before {
+        .plan-features li::before {
             content: '✔';
             position: absolute;
             left: -20px;
             color: #4CAF50;
         }
+
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .plans-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="header">
-        <div class="container">
-            <h1>RhythmSense System Architecture</h1>
-            <p>An innovative event optimization platform for DJs and event organizers.</p>
-        </div>
+    <header>
+        <h1>RhythmSense Pricing Plans</h1>
+        <p>Choose the perfect plan for your events and performances.</p>
     </header>
 
     <div class="container">
-        <!-- Tabs for Pricing Plans -->
         <div class="tabs">
             <button class="tab-button active" onclick="showTab('djs')">Aspiring DJs & Students</button>
             <button class="tab-button" onclick="showTab('pro')">Professional DJs</button>
@@ -153,13 +185,12 @@
             <button class="tab-button" onclick="showTab('enterprise')">Enterprise</button>
         </div>
 
-        <!-- Tab Content for Pricing Plans -->
-        <div id="djs" class="tab-content active">
+        <div id="djs" class="plans-wrapper">
             <div class="plan-card">
                 <div class="plan-title">Free Plan</div>
                 <div class="plan-price">$0</div>
                 <div class="plan-description">Basic tools for aspiring DJs.</div>
-                <ul>
+                <ul class="plan-features">
                     <li>Basic real-time tracking</li>
                     <li>1 event per month</li>
                     <li>Post-event summary</li>
@@ -168,24 +199,25 @@
             </div>
 
             <div class="plan-card">
+                <div class="recommended-badge">RECOMMENDED</div>
                 <div class="plan-title">Student Plan</div>
                 <div class="plan-price">$9.99/month</div>
                 <div class="plan-description">Discounted plan with advanced features.</div>
-                <ul>
+                <ul class="plan-features">
                     <li>Advanced tracking</li>
-                    <li>AI recommendations</li>
+                    <li>AI-driven recommendations</li>
                     <li>Access to tutorials</li>
                 </ul>
                 <a href="#" class="cta-button">Select Plan</a>
             </div>
         </div>
 
-        <div id="pro" class="tab-content">
+        <div id="pro" class="plans-wrapper" style="display: none;">
             <div class="plan-card">
                 <div class="plan-title">Individual Plan</div>
                 <div class="plan-price">$19.99/month</div>
                 <div class="plan-description">Perfect for professional DJs.</div>
-                <ul>
+                <ul class="plan-features">
                     <li>Unlimited events</li>
                     <li>Merch and ticket sales integration</li>
                     <li>Fan tipping & donations</li>
@@ -194,64 +226,17 @@
             </div>
         </div>
 
-        <div id="planners" class="tab-content">
-            <div class="plan-card">
-                <div class="plan-title">Duo Plan</div>
-                <div class="plan-price">$29.99/month</div>
-                <div class="plan-description">For event planners and DJ collaborations.</div>
-                <ul>
-                    <li>Shared dashboards</li>
-                    <li>3 events per month</li>
-                    <li>Real-time management tools</li>
-                </ul>
-                <a href="#" class="cta-button">Select Plan</a>
-            </div>
-        </div>
-
-        <div id="venues" class="tab-content">
-            <div class="plan-card">
-                <div class="plan-title">Business Plan</div>
-                <div class="plan-price">$69.99/month</div>
-                <div class="plan-description">For venues and clubs.</div>
-                <ul>
-                    <li>Up to 6 users</li>
-                    <li>API integration with lighting systems</li>
-                    <li>Audience segmentation</li>
-                </ul>
-                <a href="#" class="cta-button">Select Plan</a>
-            </div>
-        </div>
-
-        <div id="enterprise" class="tab-content">
-            <div class="plan-card">
-                <div class="plan-title">Enterprise Plan</div>
-                <div class="plan-price">Custom Pricing</div>
-                <div class="plan-description">For large-scale events and agencies.</div>
-                <ul>
-                    <li>White-label solutions</li>
-                    <li>Multi-venue management</li>
-                    <li>24/7 support</li>
-                </ul>
-                <a href="#" class="cta-button">Contact Us</a>
-            </div>
-        </div>
     </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 RhythmSense. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script>
         function showTab(tabId) {
-            const contents = document.querySelectorAll('.tab-content');
+            const wrappers = document.querySelectorAll('.plans-wrapper');
             const buttons = document.querySelectorAll('.tab-button');
 
-            contents.forEach(content => content.classList.remove('active'));
+            wrappers.forEach(wrapper => wrapper.style.display = 'none');
             buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById(tabId).classList.add('active');
+            document.getElementById(tabId).style.display = 'flex';
             event.currentTarget.classList.add('active');
         }
     </script>
